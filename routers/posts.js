@@ -1,34 +1,32 @@
 const express = require("express")
 const router = express.Router()
 
-module.exports = router
-
 //index
-router.get("/posts", (req, res) => {
+router.get("/", (req, res) => {
   res.send("lista dei post!");
 });
 
 //show
-router.get("/posts/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   const id = req.params.id;
-  res.send(`dettagli del post! ${id}`);
+  res.send(`dettagli del post ${id}`);
 });
 
 //create
-router.post("/posts", (req, res) => {
+router.post("/", (req, res) => {
   res.send("creazione post");
 });
 
 //update
-router.put("/posts/:id", (req, res) => {
+router.put("/:id", (req, res) => {
   const id = req.params.id;
-  res.send("aggiornamento post" + ${id});
+  res.send("aggiornamento post" + id);
 });
 
 //delete
-router.delete("/posts/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   const id = req.params.id;
-  res.send("cancellazione post" + ${id});
+  res.send("cancellazione post" + id);
 }); 
 
-    
+module.exports = router;
